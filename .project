@@ -53,6 +53,7 @@
 			</matcher>
 		</filter>
 		<filter>
+<<<<<<< HEAD
 			<id>1642054905208</id>
 			<name></name>
 			<type>10</type>
@@ -63,6 +64,18 @@
 		</filter>
 		<filter>
 			<id>1642054905220</id>
+=======
+			<id>1642055183275</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>.*\.svn$</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1642055183285</id>
+>>>>>>> branch 'main' of https://github.com/hwanta/shopby.git
 			<name></name>
 			<type>6</type>
 			<matcher>
