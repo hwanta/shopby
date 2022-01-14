@@ -19,19 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.closeBrowser()
-
-WebUI.openBrowser('')
-
 WebUI.navigateToUrl('https://alpha-admin.shopby.co.kr/pro/auth')
 
-WebUI.setText(findTestObject('null'), 'shopbyproadmin')
+WebUI.setText(findTestObject('Object Repository/admin_product/Page_shopby-pro-admin/input__ncp_input w220'), 'shopbyproadmin')
 
-WebUI.setEncryptedText(findTestObject('null'), 'YY6OvKdam5zXcWhrYqhBkg==')
+WebUI.setEncryptedText(findTestObject('Object Repository/admin_product/Page_shopby-pro-admin/input__w220'), 'YY6OvKdam5zXcWhrYqhBkg==')
 
-WebUI.click(findTestObject('null'))
+WebUI.click(findTestObject('Object Repository/admin_product/Page_shopby-pro-admin/button_'))
 
-WebUI.click(findTestObject('null'))
+WebUI.click(findTestObject('admin_product/Page_shopby-pro-admin/a_product'))
 
-WebUI.click(findTestObject('null'))
+WebUI.click(findTestObject('admin_product/Page_shopby-pro-admin/a__productlist'))
 
