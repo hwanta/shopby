@@ -31,3 +31,9 @@ WebUI.click(findTestObject('admin_product/Page_shopby-pro-admin/a_product'))
 
 WebUI.click(findTestObject('admin_product/Page_shopby-pro-admin/a__productlist'))
 
+WebUI.acceptAlert()
+
+WebUI.acceptAlert()
+
+WebUI.acceptAlert()
+
