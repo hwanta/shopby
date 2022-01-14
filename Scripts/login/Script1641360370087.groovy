@@ -27,3 +27,7 @@ WebUI.setEncryptedText(findTestObject('Page_shopby-pro-admin/input_password'), '
 
 WebUI.click(findTestObject('Page_shopby-pro-admin/button_login'))
 
+WebUI.acceptAlert()
+
+WebUI.acceptAlert()
+
