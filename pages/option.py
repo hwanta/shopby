@@ -1,9 +1,7 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait   # 로딩될 때까지 대기
 from selenium.webdriver.support import expected_conditions as EC # 로딩될 때까지 대기
-import login
-import time
+from pages import login
 
 
 # 쇼핑몰 설정 > 기본정책 > 기본정보
@@ -32,7 +30,7 @@ def mallManagement() :
 
     WebDriverWait(login.driver, 10).until(EC.presence_of_element_located\
                                    ((By.LINK_TEXT,'쇼핑몰관리'))) 
-    login.driver.find_element(by=By.LINK_TEXT,value="쇼핑몰관리").click() # link_text 사용(a태그)
+    login.driver.find_element(by=By.LINK_TEXT, value="쇼핑몰관리").click() # link_text 사용(a태그)
 
 # 설정 > 기본정책 > 약관/개인정보처리방침 관리
 def terms() :
