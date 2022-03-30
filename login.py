@@ -10,8 +10,21 @@ driver.get(url)
 
 # 쇼핑몰 로그인
 def login() :
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located\
-                                   ((By.XPATH,'//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input')))
-    driver.find_element(by=By.XPATH, value='//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input').send_keys('shopbyproadmin')  # xpath 사용
-    driver.find_element(by=By.CSS_SELECTOR, value='#container > div.content_login > div > form > div > table > tr:nth-child(2) > td > input').send_keys('WkaQhd@629') # css_selector 사용
-    driver.find_element(by=By.CSS_SELECTOR, value='#container > div.content_login > div > form > button:nth-child(2)').click()
+    try :
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located\
+                                    ((By.XPATH,'//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input')))
+        driver.find_element(by=By.XPATH, value='//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input').send_keys('shopbyproadmin')  # xpath 사용
+        driver.find_element(by=By.CSS_SELECTOR, value='#container > div.content_login > div > form > div > table > tr:nth-child(2) > td > input').send_keys('WkaQhd@629') # css_selector 사용
+        driver.find_element(by=By.CSS_SELECTOR, value='#container > div.content_login > div > form > button:nth-child(2)').click()
+    
+        # alert 존재하면 내용 출력, 없으면 pass 출력
+        WebDriverWait(driver, 3).until(EC.alert_is_present()) 
+        alert = driver.switch_to.alert
+        print(alert.text)
+        alert.accept()
+    except : 
+        print("pass")
+
+login()
+time.sleep(5) # 5초 대기
+driver.quit()
