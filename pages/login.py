@@ -9,7 +9,9 @@ import time
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+options.add_argument("--start-maximized") # 전체화면 옵션
+
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 url = 'https://alpha-admin.shopby.co.kr'
 driver.get(url)
 
