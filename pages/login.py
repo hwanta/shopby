@@ -27,8 +27,8 @@ def login() :
         # alert 존재하면 내용 출력, 없으면 pass 출력
         WebDriverWait(driver, 3).until(EC.alert_is_present()) 
         alert = driver.switch_to.alert
-        print("-----------------------Fail-----------------------")
+        print("login : Fail")
         print(alert.text)
         alert.accept()
     except : 
-        print("-----------------------Pass-----------------------")
+        print("login : Pass")
