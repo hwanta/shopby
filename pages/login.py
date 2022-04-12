@@ -32,3 +32,10 @@ def login() :
         alert.accept()
     except : 
         print("login : Pass")
+
+    # 비밀번호 변경 팝업 출력 시 [다음에 변경하기] 버튼 클릭
+    popup = driver.find_element(by=By.CLASS_NAME, value='layer_popup').is_displayed()
+    if popup :
+        driver.find_element(by=By.CSS_SELECTOR,
+                            value='#container > div.content_login > div.layer_popup_wrap.ncp_layerpopup > div > '
+                                  'div.lp_content > div > div.lp_footer > button.lp_close_btn.medium.lp_close').click()
