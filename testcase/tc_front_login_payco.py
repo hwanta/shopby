@@ -7,4 +7,4 @@ import time
 # 로그인
 front_login_payco.login()
 time.sleep(5) # 5초 대기
-front_login_payco.driver.quit()
+front_login_payco.create_driver.driver.quit()

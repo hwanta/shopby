@@ -8,4 +8,4 @@ login.login()
 option_MM_mallEdit.mallEdit()
 
 time.sleep(5) # 5초 대기
-login.driver.quit()
+login.create_driver.driver.quit()

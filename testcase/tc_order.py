@@ -9,4 +9,4 @@ login.login()
 order.integratedOrderList()
 
 time.sleep(5) # 5초 대기
-login.driver.quit()
+login.create_driver.driver.quit()

@@ -7,4 +7,4 @@ import time
 # 로그인
 login.login()
 time.sleep(5) # 5초 대기
-login.driver.quit()
+login.create_driver.driver.quit()
