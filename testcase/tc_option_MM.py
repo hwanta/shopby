@@ -12,13 +12,13 @@ option_MM.clickPC()
 time.sleep(1) # PC웹 출력되고 1초 대기
 
 # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
-login.driver.switch_to.window(login.driver.window_handles[1])
-login.driver.close()
+login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[1])
+login.create_driver.driver.close()
 
 # 다시 현재 탭 0번 탭으로 변경
-login.driver.switch_to.window(login.driver.window_handles[0])
+login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[0])
 
 option_MM.clickMobile()
 
 time.sleep(5) # 5초 대기
-login.driver.quit()
+login.create_driver.driver.quit()
