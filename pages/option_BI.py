@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait   # 로딩될 때까지 
 from selenium.webdriver.support import expected_conditions as EC # 로딩될 때까지 대기
 import time
 from pages import login,option,create_driver
+from selenium.webdriver import ActionChains
 
 # 설정 > 기본정책 > 기본정보
 def inputBI() :
@@ -127,11 +128,14 @@ def inputBI() :
     managerEmail2.clear()
     managerEmail2.send_keys('nhnsoft.com')
 
+    time.sleep(2)
     try :
         # [저장] 버튼 클릭
-        save = login.create_driver.driver.find_element(by=By.XPATH,
-                                     value='/html/body/div/div[4]/div/div[2]/button')
-        save.click()
+        save = login.create_driver.driver.find_element(by=By.LINK_TEXT,
+                                     value='저장')
+        action = ActionChains(login.create_driver)
+        action.click().perform()
+
         # alert 존재하면 내용 출력, 없으면 pass 출력
         WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
         alert = login.create_driver.driver.switch_to.alert
