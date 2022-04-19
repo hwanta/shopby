@@ -1,5 +1,3 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager  # import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait  # 로딩될 때까지 대기
 from selenium.webdriver.support import expected_conditions as EC  # 로딩될 때까지 대기

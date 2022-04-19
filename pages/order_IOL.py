@@ -10,7 +10,7 @@ def findOrder() :
     front_login.login()
     front_purchase.productPurchase()
 
-    time.sleep(2)
+    time.sleep(3)
     # 주문번호 획득
     orderNum = front_login.create_driver.driver.find_element(by=By.XPATH,
                               value='//*[@id="orderInfoTable"]/table/tbody/tr[3]/td').text
@@ -29,16 +29,16 @@ def findOrder() :
     login.create_driver.driver.find_element(by=By.CSS_SELECTOR, value='#searchForm > table > tbody > tr:nth-child(2) >'
                                                         ' td.search_btn_wrap > div > button.tbBtn.type-red').click()
 
-    # time.sleep(3)
-    # # ActionChains 사용하여 해당 요소에 접근 후 클릭
-    # element = front_login.create_driver.driver.\
-    #     find_element(by=By.CSS_SELECTOR, value="body > div > div.container-wrap > "
-    #                                     "div.content-bottom-wrap > div.contents > "
-    #                                     "div > div.mall-orders-view > div > "
-    #                                     "div.content_item_bx > div > div > "
-    #                                     "div.tui-pagination.tui-grid-pagination > strong")
-    # action = ActionChains(front_login.create_driver.driver).move_to_element(element)
-    # action.perform()
+    time.sleep(3)
+    # ActionChains 사용하여 해당 요소에 접근 후 클릭
+    element = front_login.create_driver.driver.\
+        find_element(by=By.CSS_SELECTOR, value="body > div > div.container-wrap > "
+                                        "div.content-bottom-wrap > div.contents > "
+                                        "div > div.mall-orders-view > div > "
+                                        "div.content_item_bx > div > div > "
+                                        "div.tui-pagination.tui-grid-pagination > strong")
+    action = ActionChains(front_login.create_driver.driver).move_to_element(element)
+    action.perform()
 
     time.sleep(5)  # 5초 대기
     login.create_driver.driver.quit()

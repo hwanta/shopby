@@ -6,6 +6,7 @@ import time
 
 
 login.login()
+time.sleep(2)
 option_BI.inputBI()
 
 time.sleep(5) # 5초 대기
