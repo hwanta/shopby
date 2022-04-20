@@ -18,3 +18,12 @@ def MemberList():
                                               ((By.LINK_TEXT, '회원 리스트')))
     login.create_driver.driver.find_element(by=By.LINK_TEXT, value="회원 리스트").click()
 
+# 회원리스트_검색
+def MemberListSearch():
+    searchWord = login.create_driver.driver.find_element(by=By.XPATH, value='//*[@id="searchForm"]/table/tbody/tr[2]/td/div/input') #검색어 입력 찾기
+    searchWord.clear()
+    searchWord.send_keys('bomee331') # 회원리스트 아이디 검색어 입력
+    search = login.create_driver.driver.find_element(by=By.XPATH, value='//*[@id="searchForm"]/table/tbody/tr[1]/td[2]/div/button[1]') #검색 버튼 찾기
+    search.click() # search 클릭
+    print("searchWord : pass")
+
