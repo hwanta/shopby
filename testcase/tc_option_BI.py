@@ -5,9 +5,7 @@ from pages import login, option_BI
 import time
 
 
-login.login()
-time.sleep(2)
-option_BI.inputBI()
-
-time.sleep(5) # 5초 대기
-login.create_driver.driver.quit()
+def option_BI():
+    login.login()
+    time.sleep(2)
+    option_BI.inputBI()

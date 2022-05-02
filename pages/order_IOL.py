@@ -40,6 +40,5 @@ def findOrder() :
     action = ActionChains(front_login.create_driver.driver).move_to_element(element)
     action.perform()
 
-    time.sleep(5)  # 5초 대기
-    login.create_driver.driver.quit()
+
 

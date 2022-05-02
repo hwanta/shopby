@@ -4,39 +4,39 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) # �
 from pages import login, option
 import time
 
-# 로그인
-login.login()
 
-# 설정 > 기본정책
-option.basicInformation()
+def tc_option():
+    # 로그인
+    login.login()
 
-option.mallManagement()
+    # 설정 > 기본정책
+    option.basicInformation()
 
-option.terms()
+    option.mallManagement()
 
-option.externalService()
+    option.terms()
 
-# # 설정 > 관리정책
-option.operatorManagement()
+    option.externalService()
 
-option.permissionGroup()
+    # # 설정 > 관리정책
+    option.operatorManagement()
 
-# # 설정 > 보안정책
-option.operationalSecuritySettings()
+    option.permissionGroup()
 
-option.personalInformationAccess()
+    # # 설정 > 보안정책
+    option.operationalSecuritySettings()
 
-option.securityManagementServer()
+    option.personalInformationAccess()
 
-# 설정 > 배송정책
-option.shippingCostManagement()
+    option.securityManagementServer()
 
-# 설정 > 결제정책
-option.pgSettings()
+    # 설정 > 배송정책
+    option.shippingCostManagement()
 
-option.paycoPaymentSettings()
+    # 설정 > 결제정책
+    option.pgSettings()
 
-option.naverPaymentSettings()
+    option.paycoPaymentSettings()
 
-time.sleep(5) # 5초 대기
-login.create_driver.driver.quit()
+    option.naverPaymentSettings()
+

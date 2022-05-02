@@ -4,10 +4,9 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) # �
 from pages import login, member
 import time
 
-login.login()
 
-member.MemberList()
-member.MemberListSearch()
+def tc_member():
+    login.login()
+    member.MemberList()
+    member.MemberListSearch()
 
-time.sleep(5) # 5초 대기
-login.create_driver.driver.quit()

@@ -4,10 +4,9 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from pages import front_login, front_purchase
 import time
 
-# 로그인
-front_login.login()
 
-front_purchase.productPurchase()
+def front_purchase():
+    # 로그인
+    front_login.login()
 
-time.sleep(5) # 5초 대기
-front_login.create_driver.driver.quit()
+    front_purchase.productPurchase()

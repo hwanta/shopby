@@ -10,6 +10,13 @@ def login() :
     url = 'https://alpha-admin.shopby.co.kr'
     create_driver.driver.get(url)
 
+    try:
+        create_driver.driver.find_element(by=By.XPATH,
+                                          value='//*[@id="container"]/div[2]/div/form/'
+                                                'div/table/tr[1]/td/input')
+    except:
+        return
+
     try :
         WebDriverWait(create_driver.driver, 10).until(EC.presence_of_element_located\
                                     ((By.XPATH,'//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input')))
@@ -31,8 +38,12 @@ def login() :
         print("login : Pass")
 
     # 비밀번호 변경 팝업 출력 시 [다음에 변경하기] 버튼 클릭
-    popup = create_driver.driver.find_element(by=By.CLASS_NAME, value='layer_popup').is_displayed()
-    if popup :
+    try:
+        popup = create_driver.driver.find_element(by=By.CLASS_NAME, value='layer_popup').is_displayed()
         create_driver.driver.find_element(by=By.CSS_SELECTOR,
-                            value='#container > div.content_login > div.layer_popup_wrap.ncp_layerpopup > div > '
-                                  'div.lp_content > div > div.lp_footer > button.lp_close_btn.medium.lp_close').click()
+                                          value='#container > div.content_login > div.layer_popup_wrap.ncp_layerpopup > div > '
+                                                'div.lp_content > div > div.lp_footer > button.lp_close_btn.medium.lp_close').click()
+    except:
+        print("popup is not exist")
+
+
