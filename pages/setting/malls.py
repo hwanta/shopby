@@ -3,11 +3,12 @@ from selenium.webdriver.support.ui import WebDriverWait   # 로딩될 때까지 
 from selenium.webdriver.support import expected_conditions as EC # 로딩될 때까지 대기
 from pages import login
 from pages.setting import option
+import time
 
 
 # 설정 > 기본정책 > 쇼핑몰관리
 # 신규 쇼핑몰 등록
-def clickMall() :
+def addMall() :
 
     option.mallManagement()
     try:
@@ -20,9 +21,10 @@ def clickMall() :
         print(alert.text)
         alert.accept()
     except:
-        print('pass')
+        print('신규 쇼핑몰 등록 버튼 클릭 시 alert 미출력됨')
 
-def clickMallName() :
+# 쇼핑몰 수정
+def editMall():
 
     option.mallManagement()
     # 내부 class 스크롤
@@ -40,50 +42,59 @@ def clickMallName() :
         print(alert.text)
         alert.accept()
     except:
-        print('pass')
+        print('쇼핑몰명 클릭 시 alert 미출력됨')
 
-def clickPC() :
+# 쇼핑몰 등록/수정 이외의 부분
+def mallMange() :
 
     option.mallManagement()
     # 내부 class 스크롤
     mallList = login.create_driver.driver.find_element(by=By.CLASS_NAME,
-                                         value='tui-grid-body-area')
+                                                       value='tui-grid-body-area')
     login.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
 
     # PC웹 클릭
     try:
         _PCWeb = login.create_driver.driver.find_element(by=By.XPATH,
-                                          value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div/div/div[1]/'
-                                                'div[2]/div[2]/div/div[1]/table/tbody/tr[10]/td[2]/div/a')
+                                             value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div'
+                                                   '/div/div[1]/div[2]/div[2]/div/div[1]/table/tbody/tr/td[2]/div')
         _PCWeb.click()
         WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
         alert = login.create_driver.driver.switch_to.alert
         print(alert.text)
         alert.accept()
     except:
-        print('pass')
+        print('PC웹 클릭 시 alert 미출력됨')
 
-def clickMobile() :
+    time.sleep(1)  # PC웹 출력되고 1초 대기
 
-    option.mallManagement()
+    # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
+    login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[1])
+    login.create_driver.driver.close()
 
-    # 내부 class 스크롤
-    mallList = login.create_driver.driver.find_element(by=By.CLASS_NAME,
-                                         value='tui-grid-body-area')
-    login.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
+    # 다시 현재 탭 0번 탭으로 변경
+    login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[0])
 
     # 모바일웹 클릭
     try:
         _MobileWeb = login.create_driver.driver.find_element(by=By.XPATH,
-                                          value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div/div/div[1]/'
-                                                'div[2]/div[2]/div/div[1]/table/tbody/tr[10]/td[3]/div/a')
+                                          value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div/'
+                                                'div/div[1]/div[2]/div[2]/div/div[1]/table/tbody/tr/td[3]/div/a')
         _MobileWeb.click()
         WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
         alert = login.create_driver.driver.switch_to.alert
         print(alert.text)
         alert.accept()
     except:
-        print('pass')
+        print('모바일웹 클릭 시 alert 미출력됨')
+
+    # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
+    login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[1])
+    login.create_driver.driver.close()
+
+    # 다시 현재 탭 0번 탭으로 변경
+    login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[0])
+
 
 
 

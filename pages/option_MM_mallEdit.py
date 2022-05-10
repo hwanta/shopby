@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
-from pages import login, option_MM
+from pages import login
+from pages.setting import malls
 
 
 # 설정 > 기본정책 > 쇼핑몰관리 > 쇼핑몰 수정

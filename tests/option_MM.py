@@ -1,7 +1,8 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) # 폴더 다를 때 사용
 
-from pages import login, option_MM, option_MM_mallEdit
+from pages import login
+from pages.setting import malls
 import time
 
 
