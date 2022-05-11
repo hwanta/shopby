@@ -40,7 +40,7 @@ def inputBI() :
     representativePhoneNumber = login.create_driver.driver.find_element(by=By.XPATH,
                               value= BI + 'tr[3]/td[1]/div/div/input')
     representativePhoneNumber.clear()
-    representativePhoneNumber.send_keys('0101111'+ str(randomNumI))
+    representativePhoneNumber.send_keys('01000000000')
 
     # 기본정보 > 통신판매업 신고번호
     telemarketingNumber = login.create_driver.driver.find_element(by=By.XPATH,
