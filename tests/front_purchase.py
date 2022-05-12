@@ -10,4 +10,4 @@ front_login.login()
 front_purchase.productPurchase()
 
 time.sleep(5) # 5초 대기
-front_login.create_driver.driver.quit()
+lib.create_driver.driver.quit()

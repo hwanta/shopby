@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait   # 로딩될 때까지 대기
 from selenium.webdriver.support import expected_conditions as EC # 로딩될 때까지 대기
-from pages import create_driver
+from lib import create_driver
 
 
 # 쇼핑몰 로그인
@@ -12,15 +12,14 @@ def login():
     # 로그인 되어있는지 먼저 확인
     try:
         create_driver.driver.find_element(by=By.XPATH,
-                                          value='//*[@id="container"]/div[2]/div/form/'
-                                                'div/table/tr[1]/td/input')
+                                          value='//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input')
     except:
         return
 
     # xpath 해당 부분이 존재하는지 확인
-    WebDriverWait(create_driver.driver, 10).until(EC.presence_of_element_located \
-                                                      ((By.XPATH,
-                                                        '//*[@id="container"]/div[2]/div/form/div/table/tr[1]/td/input')))
+    WebDriverWait(create_driver.driver, 10).until(EC.presence_of_element_located ((By.XPATH,'//*[@id="container"]/'
+                                                                                            'div[2]/div/form/div/'
+                                                                                            'table/tr[1]/td/input')))
     # 통합회원 로그인 클릭
     create_driver.driver.find_element(by=By.CSS_SELECTOR,
                                       value='#container > div.content_login > div > form > button.btn_login.auth').click()
@@ -55,4 +54,4 @@ def login():
                                           value='#container > div.content_login > div.layer_popup_wrap.ncp_layerpopup > div > '
                                                 'div.lp_content > div > div.lp_footer > button.lp_close_btn.medium.lp_close').click()
     except:
-        print("popup is not exist")
+        print("비밀번호 변경 팝업 미출력됨")

@@ -1,13 +1,12 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait   # 로딩될 때까지 대기
 from selenium.webdriver.support import expected_conditions as EC # 로딩될 때까지 대기
-from pages import login
 
 
 # 메인(TC 1~119)
 # 메인 > 판매현황
 def sales():
-    WebDriverWait(login.create_driver.driver, 10).until(EC.presence_of_element_located \
+    WebDriverWait(lib.create_driver.driver, 10).until(EC.presence_of_element_located \
                                               ((By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/'
                                                               'div[1]/div[2]/div/div/ul[1]/li[2]/p[2]/a')))
     # # 메인 > 입금대기 카운트
@@ -15,13 +14,13 @@ def sales():
     #                                                   value='/html/body/div[1]/div[3]/div[2]/div[1]/div[1]'
     #                                                         '/div[1]/div[2]/div/div/ul[1]/li[1]/p[2]/a').text
 
-    element = login.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div/div[3]/div[2]/div[1]/div[1]'
+    element = lib.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div/div[3]/div[2]/div[1]/div[1]'
                                                                          '/div[1]/div[2]/div/div/ul[1]/li[1]/p[2]/a/strong')
-    login.create_driver.driver.execute_script("arguments[0].click();", element)
+    lib.create_driver.driver.execute_script("arguments[0].click();", element)
 
     # 입금대기 리스트 출력되는지 확인
     try:
-        login.create_driver.driver.find_element(by=By.XPATH,value='/html/body/div[1]/div[3]/div[2]/div[1]'
+        lib.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]'
                                                                   '/div[1]/div[1]/div[2]/div/div/ul[1]/'
                                                                   'li[1]/p[2]/a/strong').is_displayed()
         print("입금대기 리스트 출력됨")

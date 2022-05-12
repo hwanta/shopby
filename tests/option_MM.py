@@ -1,8 +1,7 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) # 폴더 다를 때 사용
 
-from pages import login
-from pages.setting import malls
+from lib import login
 import time
 
 
@@ -13,13 +12,13 @@ option_MM.clickPC()
 time.sleep(1) # PC웹 출력되고 1초 대기
 
 # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
-login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[1])
-login.create_driver.driver.close()
+lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[1])
+lib.create_driver.driver.close()
 
 # 다시 현재 탭 0번 탭으로 변경
-login.create_driver.driver.switch_to.window(login.create_driver.driver.window_handles[0])
+lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[0])
 
 option_MM.clickMobile()
 
 time.sleep(5) # 5초 대기
-login.create_driver.driver.quit()
+lib.create_driver.driver.quit()
