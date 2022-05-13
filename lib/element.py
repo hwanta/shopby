@@ -5,7 +5,10 @@ from selenium.webdriver.support.ui import WebDriverWait  # 로딩될 때까지 �
 from selenium.webdriver.support import expected_conditions as EC  # 로딩될 때까지 대기
 import time
 from lib import login
+import random
 
+randomNumT = random.randrange(1, 1000)
+randomNumI = random.randrange(1000, 10000)
 
 # xpath로 버튼 클릭
 def ClickByXPath(element, num):

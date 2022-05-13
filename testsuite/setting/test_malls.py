@@ -9,7 +9,7 @@ import time
 
 class Test(TestCase):
 
-    # 초기 login 및 설정 > 기본정보 진입
+    # 초기 login 및 설정 > 쇼핑몰관리 진입
     @classmethod
     def setUpClass(cls):
         login.login()
@@ -17,6 +17,11 @@ class Test(TestCase):
 
         malls.accessMalls()
         time.sleep(1)
+
+    @classmethod
+    def tearDownClass(cls):
+        time.sleep(3)
+        login.create_driver.driver.quit()
 
     def test_001(self):
         malls.addMall()
@@ -125,5 +130,4 @@ class Test(TestCase):
     def test_027(self):
         malls.mallManage()
         time.sleep(1)
-
 

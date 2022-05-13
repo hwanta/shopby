@@ -63,4 +63,7 @@ class Test(TestCase):
     def test_015(self):
         info.save()
 
+    def test_999(self):
+        time.sleep(3)
+        login.create_driver.driver.quit()
 

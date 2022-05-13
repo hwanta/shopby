@@ -7,8 +7,6 @@ from selenium.webdriver.common.keys import Keys
 from lib import login,element
 from selenium.webdriver.support.select import Select
 
-randomNumT = random.randrange(1, 1000)
-randomNumI = random.randrange(1000, 10000)
 
 # 설정 > 쇼핑몰 관리 접속(TC_120)
 def accessMalls():
@@ -40,7 +38,7 @@ def accessEditMall():
 
 # 쇼핑몰 수정 > 기본정보 > 쇼핑몰명(TC_143)
 def mallName():
-    element.InputByName('mall.mallName', 'autoqa' + str(randomNumI), '143')
+    element.InputByName('mall.mallName', 'autoqa' + str(element.randomNumI), '143')
 
 
 # 쇼핑몰 수정 > 기본정보 > 고객센터 전화번호(TC_144)
@@ -50,8 +48,8 @@ def mallNumber():
 
 # 쇼핑몰 수정 > 기본정보 > 고객센터 이메일(TC_145,146)
 def mallEmail():
-    element.InputByNameIndex('representative.email', 0, 'dlquddnr' + str(randomNumT), '145')
-    element.InputByNameIndex('representative.email', 1, 'naver.com' + str(randomNumT), '146')
+    element.InputByNameIndex('representative.email', 0, 'dlquddnr' + str(element.randomNumT), '145')
+    element.InputByNameIndex('representative.email', 1, 'naver.com' + str(element.randomNumT), '146')
 
 
 # 쇼핑몰 수정 > 접속설정 > PC웹 인트로(TC_147)
@@ -113,38 +111,38 @@ def account():
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 신용카드(TC_153)
 def creditCard():
-    element.ClickByNameIndex('orderConfig_credit_card', 1, '153')
-    element.ClickByNameIndex('orderConfig_credit_card', 0, '153')
+    element.ClickByNameIndex('orderConfig_credit_card', 1, '153-1')
+    element.ClickByNameIndex('orderConfig_credit_card', 0, '153-2')
 
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 계좌이체(TC_154)
 def realtimeAccount():
-    element.ClickByNameIndex('orderConfig_realtime_account', 1, '154')
-    element.ClickByNameIndex('orderConfig_realtime_account', 0, '154')
+    element.ClickByNameIndex('orderConfig_realtime_account', 1, '154-1')
+    element.ClickByNameIndex('orderConfig_realtime_account', 0, '154-2')
 
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 가상계좌(TC_155)
 def virtualAccount():
-    element.ClickByNameIndex('orderConfig_virtual_account', 1, '155')
-    element.ClickByNameIndex('orderConfig_virtual_account', 0, '155')
+    element.ClickByNameIndex('orderConfig_virtual_account', 1, '155-1')
+    element.ClickByNameIndex('orderConfig_virtual_account', 0, '155-2')
 
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 에스크로 계좌이체(TC_156)
 def escrowRealtimeAccount():
-    element.ClickByNameIndex('orderConfig_escrow_realtime_account', 1, '156')
-    element.ClickByNameIndex('orderConfig_escrow_realtime_account', 0, '156')
+    element.ClickByNameIndex('orderConfig_escrow_realtime_account', 1, '156-1')
+    element.ClickByNameIndex('orderConfig_escrow_realtime_account', 0, '156-2')
 
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 에스크로 가상계좌(TC_157)
 def escrowVirtualAccount():
-    element.ClickByNameIndex('orderConfig_escrow_virtual_account', 1, '157')
-    element.ClickByNameIndex('orderConfig_escrow_virtual_account', 0, '157')
+    element.ClickByNameIndex('orderConfig_escrow_virtual_account', 1, '157-1')
+    element.ClickByNameIndex('orderConfig_escrow_virtual_account', 0, '157-2')
 
 
 # 쇼핑몰 수정 > 결제수단 노출설정 > 간편결제 PAYCO (TC_158)
 def payco():
-    element.ClickByNameIndex('orderConfig_payco', 1, '158')
-    element.ClickByNameIndex('orderConfig_payco', 0, '158')
+    element.ClickByNameIndex('orderConfig_payco', 1, '158-1')
+    element.ClickByNameIndex('orderConfig_payco', 0, '158-2')
 
 
 # 쇼핑몰 수정 > 결제정보 > 계좌정보 수정 (TC_161)

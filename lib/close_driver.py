@@ -1,6 +1,7 @@
 import time
-import create_driver
+import login
+
 
 def close():
     time.sleep(3)
-    create_driver.driver.quit()
+    login.create_driver.driver.quit()

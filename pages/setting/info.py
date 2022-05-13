@@ -7,9 +7,6 @@ import random
 from lib import element
 from lib import login
 
-randomNumT = random.randrange(1, 1000)
-randomNumI = random.randrange(1000, 10000)
-
 BI = '/html/body/div/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/'
 MI = '/html/body/div/div[3]/div[2]/div[1]/div[2]/div[2]/table/tbody/'
 
@@ -33,17 +30,17 @@ def accessBI():
 
 # 설정 > 기본정보 > 회사명(TC_98)
 def companyName():
-    element.InputByXPath(BI + 'tr[1]/td[1]/div/div/input', '테스트' + str(randomNumT), '98')
+    element.InputByXPath(BI + 'tr[1]/td[1]/div/div/input', '테스트' + str(element.randomNumT), '98')
 
 
 # 설정 > 기본정보 > 대표자명(TC_99)
 def representativeName():
-    element.InputByXPath(BI + 'tr[1]/td[2]/div/div/input', '테스트' + str(randomNumT), '99')
+    element.InputByXPath(BI + 'tr[1]/td[2]/div/div/input', '테스트' + str(element.randomNumT), '99')
 
 
 # 설정 > 기본정보 > 사업자등록번호(TC_100)
 def companyRegistrationNumber():
-    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '000000'+ str(randomNumI), '100')
+    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '000000'+ str(element.randomNumI), '100')
 
 
 # 설정 > 기본정보 > 대표전화번호(TC_101)
@@ -53,28 +50,28 @@ def representativeNumber():
 
 # 설정 > 기본정보 > 통신판매업 신고번호(TC_102)
 def telemarketingNumber():
-    element.InputByXPath(BI + 'tr[3]/td[2]/div/div/input', '0101111' + str(randomNumI), '102')
+    element.InputByXPath(BI + 'tr[3]/td[2]/div/div/input', '0101111' + str(element.randomNumI), '102')
 
 
 # 설정 > 기본정보 > 대표이메일(TC_103~104)
 def representativeEmail():
-    element.InputByXPath(BI + 'tr[4]/td[1]/div/div[1]/div/input', 'byungwook.lee'+ str(randomNumT), '103')
-    element.InputByXPath(BI + 'tr[4]/td[1]/div/div[2]/div/input', 'nhnsoft.com'+ str(randomNumT), '104')
+    element.InputByXPath(BI + 'tr[4]/td[1]/div/div[1]/div/input', 'byungwook.lee'+ str(element.randomNumT), '103')
+    element.InputByXPath(BI + 'tr[4]/td[1]/div/div[2]/div/input', 'nhnsoft.com'+ str(element.randomNumT), '104')
 
 
 # 설정 > 기본정보 > 팩스번호(TC_105)
 def faxNumber():
-    element.InputByXPath(BI + 'tr[4]/td[2]/div/div/input', '0101111' + str(randomNumI), '105')
+    element.InputByXPath(BI + 'tr[4]/td[2]/div/div/input', '0101111' + str(element.randomNumI), '105')
 
 
 # 설정 > 기본정보 > 업종(TC_106)
 def businessType():
-    element.InputByXPath(BI + 'tr[5]/td[1]/div/div/input', '업종 의류' + str(randomNumT), '106')
+    element.InputByXPath(BI + 'tr[5]/td[1]/div/div/input', '업종 의류' + str(element.randomNumT), '106')
 
 
 # 설정 > 기본정보 > 업태(TC_107)
 def businessConditions():
-    element.InputByXPath(BI + 'tr[5]/td[2]/div/div/input', '업태 의류' + str(randomNumT), '107')
+    element.InputByXPath(BI + 'tr[5]/td[2]/div/div/input', '업태 의류' + str(element.randomNumT), '107')
 
 
 # 설정 > 기본정보 > 사업장 주소(TC_108~112)
@@ -90,8 +87,8 @@ def businessAddress():
                                         ((By.XPATH, '/html/body/div/div[5]/div[1]/div/div/div[2]/div[2]/ul/li[1]/button')))
     element.ClickByXPath('/html/body/div/div[5]/div[1]/div/div/div[2]/div[2]/ul/li[1]/button', '110')
 
-    element.InputByXPath(BI + 'tr[6]/td/div[2]/div[2]/div/input', '123333' + str(randomNumI), '111')
-    element.InputByXPath(BI + 'tr[6]/td/div[3]/div[2]/div/input', '456666' + str(randomNumI), '112')
+    element.InputByXPath(BI + 'tr[6]/td/div[2]/div[2]/div/input', '123333' + str(element.randomNumI), '111')
+    element.InputByXPath(BI + 'tr[6]/td/div[3]/div[2]/div/input', '456666' + str(element.randomNumI), '112')
 
 
 # 설정 > 기본정보 > 보호책임자 이름(TC_113)
@@ -100,24 +97,24 @@ def managerName():
     # 가장 하단으로 스크롤
     login.create_driver.driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
-    element.InputByXPath(MI + 'tr[1]/td[1]/div/div/input', '책임자 이름' + str(randomNumT), '113')
+    element.InputByXPath(MI + 'tr[1]/td[1]/div/div/input', '책임자 이름' + str(element.randomNumT), '113')
 
 
 # 설정 > 기본정보 > 보호책임자 전화번호(TC_114)
 def managerNumber():
-    element.InputByXPath(MI + 'tr[1]/td[2]/div/div/input', '0101111' + str(randomNumI), '114')
+    element.InputByXPath(MI + 'tr[1]/td[2]/div/div/input', '0101111' + str(element.randomNumI), '114')
 
 
 # 설정 > 기본정보 > 보호책임자 전화번호(TC_115~116)
 def managerInfo():
-    element.InputByXPath(MI + 'tr[2]/td/div[1]/div/input', '소속' + str(randomNumT), '115')
-    element.InputByXPath(MI + 'tr[2]/td/div[2]/div/input', '직위' + str(randomNumT), '116')
+    element.InputByXPath(MI + 'tr[2]/td/div[1]/div/input', '소속' + str(element.randomNumT), '115')
+    element.InputByXPath(MI + 'tr[2]/td/div[2]/div/input', '직위' + str(element.randomNumT), '116')
 
 
 # 설정 > 기본정보 > 보호책임자 이메일(TC_117~118)
 def managerEmail():
-    element.InputByXPath(MI + 'tr[3]/td/div/div[1]/div/input', 'byungwook.lee' + str(randomNumT), '117')
-    element.InputByXPath(MI + 'tr[3]/td/div/div[2]/div/input', 'nhnsoft.com' + str(randomNumT), '118')
+    element.InputByXPath(MI + 'tr[3]/td/div/div[1]/div/input', 'byungwook.lee' + str(element.randomNumT), '117')
+    element.InputByXPath(MI + 'tr[3]/td/div/div[2]/div/input', 'nhnsoft.com' + str(element.randomNumT), '118')
 
 
 # 설정 > 기본정보 > 저장 버튼(TC_119)
