@@ -52,7 +52,7 @@ def introductionUsed():
 # 쇼핑몰/회사소개 > 내용(TC_179)
 def introductionContent():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]','회사소개 내용입력테스트','179')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]','회사소개 내용입력테스트' + str(element.randomNumT),'179')
 
 
 # 쇼핑몰/회사소개 > 내용 저장(TC_180)
@@ -90,7 +90,7 @@ def termsDate():
 # 이용약관 > 내용(TC_183)
 def termsContent():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '이용약관 내용입력테스트', '183')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '이용약관 내용입력테스트' + str(element.randomNumT), '183')
 
 
 # 이용약관 > 공정거래위원회 로고 사용여부(TC_185)
@@ -142,7 +142,7 @@ def privacyDate():
 # 개인정보처리방침 > 내용(TC_189)
 def privacyContent():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]'
-                         '/table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '개인정보처리방침 내용입력테스트', '189')
+                         '/table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '개인정보처리방침 내용입력테스트' + str(element.randomNumT), '189')
 
 
 # 개인정보처리방침 > 내용 저장(TC_191)
@@ -174,7 +174,7 @@ def personalInfo():
 # [필수]개인정보 수집/이용 > 내용(TC_193)
 def personalInfoContent1():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]/'
-                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용 내용입력테스트', '193')
+                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용 내용입력테스트' + str(element.randomNumT), '193')
 
 
 # [선택]개인정보 수집/이용 > 사용여부(TC_195)
@@ -186,7 +186,7 @@ def personalInfoUsed2():
 # [선택]개인정보 수집/이용 > 내용(TC_196)
 def personalInfoContent2():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[3]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 수집/이용 내용입력테스트', '196')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 수집/이용 내용입력테스트' + str(element.randomNumT), '196')
 
 
 # [선택]개인정보 처리/위탁 > 사용여부(TC_198)
@@ -198,7 +198,7 @@ def personalInfoUsed3():
 # [선택]개인정보 처리/위탁 > 내용(TC_199)
 def personalInfoContent3():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[4]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 처리/위탁 내용입력테스트', '199')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 처리/위탁 내용입력테스트' + str(element.randomNumT), '199')
 
 
 # [선택]개인정보 제 3자 제공 > 사용여부(TC_201)
@@ -210,19 +210,19 @@ def personalInfoUsed4():
 # [선택]개인정보 제 3자 제공 > 내용(TC_202)
 def personalInfoContent4():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[5]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 제 3자 제공 내용입력테스트', '202')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[선택]개인정보 제 3자 제공 내용입력테스트' + str(element.randomNumT), '202')
 
 
 # [필수]개인정보 수집/이용 > 내용(TC_204)
 def personalInfoContent5():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[6]/'
-                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용 내용입력테스트', '204')
+                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용 내용입력테스트' + str(element.randomNumT), '204')
 
 
 # [필수]주문 상품정보 동의 > 내용(TC_206)
 def personalInfoContent6():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[7]/'
-                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]주문 상품정보 동의 내용입력테스트', '206')
+                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]주문 상품정보 동의 내용입력테스트' + str(element.randomNumT), '206')
 
 
 # [선택]통관정보 수집/이용 > 사용여부(TC_208)
@@ -234,7 +234,7 @@ def personalInfoUsed7():
 # [선택]통관정보 수집/이용 > 내용(TC_209)
 def personalInfoContent7():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[8]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[필수]통관정보 수집/이용 내용입력테스트', '209')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[필수]통관정보 수집/이용 내용입력테스트' + str(element.randomNumT), '209')
 
 
 # [선택]개인정보 국외이전 동의 > 사용여부(TC_211)
@@ -246,13 +246,13 @@ def personalInfoUsed8():
 # [선택]개인정보 국외이전 동의 > 내용(TC_212)
 def personalInfoContent8():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[9]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 국외이전 동의 내용입력테스트', '212')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 국외이전 동의 내용입력테스트' + str(element.randomNumT), '212')
 
 
 # [필수]개인정보 수집/이용(비회원) > 내용(TC_214)
 def personalInfoContent9():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[10]/'
-                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용(비회원) 내용입력테스트', '214')
+                         'table/tbody/tr/td/div/div[2]/div[3]/div[2]', '[필수]개인정보 수집/이용(비회원) 내용입력테스트' + str(element.randomNumT), '214')
 
 
 # 이용약관 > 내용 저장(TC_216)
@@ -287,7 +287,7 @@ def useInfoUsed1():
 # 이용안내 > 내용(TC_219)
 def useInfoContent1():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '이용안내 내용입력테스트', '219')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '이용안내 내용입력테스트' + str(element.randomNumT), '219')
 
 
 # 탈퇴안내 > 사용여부(TC_221)
@@ -299,7 +299,7 @@ def useInfoUsed2():
 # 탈퇴안내 > 내용(TC_222)
 def useInfoContent2():
     element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[3]/'
-                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '탈퇴안내 내용입력테스트', '222')
+                         'table/tbody/tr[2]/td/div/div[2]/div[3]/div[2]', '탈퇴안내 내용입력테스트' + str(element.randomNumT), '222')
 
 
 # 탈퇴안내 > 내용 저장(TC_223)

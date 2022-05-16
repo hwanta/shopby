@@ -3,19 +3,17 @@ import sys, os  # 폴더 다를 때 사용
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 from lib import login
-from pages.setting import info
+from pages.setting import admin
 import time
 
 
 class Test(TestCase):
-
-    # 초기 login 및 설정 > 기본정보 진입
     @classmethod
     def setUpClass(cls):
         login.login()
         time.sleep(1)
 
-        info.accessBI()
+        admin.accessAdmin()
         time.sleep(1)
 
     def tearDown(self):
@@ -27,48 +25,59 @@ class Test(TestCase):
         login.create_driver.driver.quit()
 
     def test_001(self):
-        info.companyName()
+        admin.searchWord()
 
     def test_002(self):
-        info.representativeName()
+        admin.state()
 
     def test_003(self):
-        info.companyRegistrationNumber()
+        admin.advancedSearch()
 
     def test_004(self):
-        info.representativeNumber()
+        admin.searchButton()
 
     def test_005(self):
-        info.telemarketingNumber()
+        admin.clickRegistration()
 
     def test_006(self):
-        info.representativeEmail()
+        admin.operatorName()
 
     def test_007(self):
-        info.faxNumber()
+        admin.operatorEmail()
 
     def test_008(self):
-        info.businessType()
+        admin.permissionGroup()
 
-    def test_009(self):
-        info.businessConditions()
+    # 운영자 등록 저장은 주석처리
+    # def test_009(self):
+    #     admin.saveRegistration()
 
     def test_010(self):
-        info.businessAddress()
+        admin.cancelRegistration()
 
     def test_011(self):
-        info.managerName()
+        admin.editOperator()
 
     def test_012(self):
-        info.managerNumber()
+        admin.editEmail()
 
     def test_013(self):
-        info.managerInfo()
+        admin.editPhoneNum()
 
     def test_014(self):
-        info.managerEmail()
+        admin.editAffiliationDepartment()
 
     def test_015(self):
-        info.save()
+        admin.editRank()
 
+    def test_016(self):
+        admin.editPosition()
 
+    def test_017(self):
+        admin.editPermissionGroup()
+
+    def test_018(self):
+        admin.save()
+
+    def test_019(self):
+        admin.operatorList()

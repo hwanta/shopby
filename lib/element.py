@@ -106,25 +106,6 @@ def ClickByName(element, num):
         return False
 
 
-# classname으로 버튼 클릭
-def ClickByClassName(element, num):
-    '''
-    classname으로 버튼 클릭
-    :param element: ClassName
-    :param num: TC_number
-    :return:
-    '''
-    try:
-        login.create_driver.driver.find_element(By.CLASS_NAME, value=element).click()
-        time.sleep(1)
-        print("TC " + num + " PASS")
-        return True
-    except Exception as e:
-        print(e)
-        print("TC " + num + " Fail")
-        return False
-
-
 # Name으로 버튼 클릭(인덱스사용)
 def ClickByNameIndex(element, index, num):
     '''
@@ -136,6 +117,25 @@ def ClickByNameIndex(element, index, num):
     '''
     try:
         login.create_driver.driver.find_elements(By.NAME, value=element)[int(index)].click()
+        time.sleep(1)
+        print("TC " + num + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + num + " Fail")
+        return False
+
+
+# classname으로 버튼 클릭
+def ClickByClassName(element, num):
+    '''
+    classname으로 버튼 클릭
+    :param element: ClassName
+    :param num: TC_number
+    :return:
+    '''
+    try:
+        login.create_driver.driver.find_element(By.CLASS_NAME, value=element).click()
         time.sleep(1)
         print("TC " + num + " PASS")
         return True

@@ -40,7 +40,7 @@ def representativeName():
 
 # 설정 > 기본정보 > 사업자등록번호(TC_100)
 def companyRegistrationNumber():
-    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '000000'+ str(element.randomNumI), '100')
+    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '000000' + str(element.randomNumI), '100')
 
 
 # 설정 > 기본정보 > 대표전화번호(TC_101)

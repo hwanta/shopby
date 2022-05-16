@@ -203,20 +203,39 @@ def storagePeriod():
 # 쇼핑몰 수정 > 장바구니 설정 > 보관 기간 날짜 드롭박스(TC_171)
 def storagePeriodSelect():
     # 보관 기간 ㅇ최대 [7일]드롭박스 일까지 보관 가능 라디오버튼 선택
-    element.ClickByNameIndex('cartConfig.storagePeriodNoLimit', 1, '171')
+    element.ClickByNameIndex('cartConfig.storagePeriodNoLimit', 1, '171-1')
 
-    select = Select(login.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]'
-                                                                              '/div[4]/div[2]/div[2]/table/tbody/tr[1]'
-                                                                              '/td/label[2]/select'))
-    select.select_by_index(random.randrange(0, 30))
+    try:
+        select = Select(
+            login.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]'
+                                                                       '/div[4]/div[2]/div[2]/table/tbody/tr[1]'
+                                                                       '/td/label[2]/select'))
+        select.select_by_index(random.randrange(0, 30))
+        time.sleep(1)
+        print("TC " + '171-2' + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + '171-2' + " Fail")
+        return False
 
 
 # 쇼핑몰 수정 > 장바구니 설정 > 보관 수량 (TC_172)
 def storageQuantity():
-    select = Select(login.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]'
-                                                                               '/div[4]/div[2]/div[2]/table/tbody/tr[2]'
-                                                                               '/td/select'))
-    select.select_by_index(random.choice([0, 1, 2, 3, 4, 5]))
+
+    try:
+        select = Select(
+            login.create_driver.driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]'
+                                                                       '/div[4]/div[2]/div[2]/table/tbody/tr[2]'
+                                                                       '/td/select'))
+        select.select_by_index(random.choice([0, 1, 2, 3, 4, 5]))
+        time.sleep(1)
+        print("TC " + '172' + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + '172' + " Fail")
+        return False
 
 
 # 설정 > 쇼핑몰 수정 > 저장 버튼(TC_173)
