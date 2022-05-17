@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC  # 로딩될 �
 from pages.setting import option
 import time, random
 from selenium.webdriver.common.keys import Keys
-from lib import login, element
+from libs import login, element
 from selenium.webdriver.support.select import Select
 from selenium.webdriver import ActionChains
 

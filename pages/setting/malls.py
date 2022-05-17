@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC # 로딩될 때
 from pages.setting import option
 import time, random
 from selenium.webdriver.common.keys import Keys
-from lib import login,element
+from libs import login,element
 from selenium.webdriver.support.select import Select
 
 
@@ -293,11 +293,11 @@ def mallManage():
 #     option.mallManagement()
 #     try:
 #     # 신규 쇼핑몰 등록 버튼 클릭
-#         addMall = lib.create_driver.driver.find_element(by=By.XPATH,
+#         addMall = libs.create_driver.driver.find_element(by=By.XPATH,
 #                                                         value='//*[@id="mall-list-grid"]/div/div/div/div[1]/div/button')
 #         addMall.click()
-#         WebDriverWait(lib.create_driver.driver, 3).until(EC.alert_is_present())
-#         alert = lib.create_driver.driver.switch_to.alert
+#         WebDriverWait(libs.create_driver.driver, 3).until(EC.alert_is_present())
+#         alert = libs.create_driver.driver.switch_to.alert
 #         print(alert.text)
 #         alert.accept()
 #     except:
@@ -307,67 +307,67 @@ def mallManage():
 # def editMall():
 #
 #     # 내부 class 스크롤
-#     mallList = lib.create_driver.driver.find_element(by=By.CLASS_NAME,
+#     mallList = libs.create_driver.driver.find_element(by=By.CLASS_NAME,
 #                                                      value='tui-grid-body-area')
-#     lib.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
+#     libs.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
 #
 #     # 쇼핑몰명 클릭
 #     try:
-#         mallName = lib.create_driver.driver.find_element(by=By.LINK_TEXT,
+#         mallName = libs.create_driver.driver.find_element(by=By.LINK_TEXT,
 #                                                          value='autoqa01')
 #         mallName.click()
-#         WebDriverWait(lib.create_driver.driver, 3).until(EC.alert_is_present())
-#         alert = lib.create_driver.driver.switch_to.alert
+#         WebDriverWait(libs.create_driver.driver, 3).until(EC.alert_is_present())
+#         alert = libs.create_driver.driver.switch_to.alert
 #         print(alert.text)
 #         alert.accept()
 #     except:
 #         print('쇼핑몰명 클릭 시 alert 미출력됨')
 #
-#     WebDriverWait(lib.create_driver.driver, 10).until(EC.presence_of_element_located((By.NAME, 'mall.mallName')))
+#     WebDriverWait(libs.create_driver.driver, 10).until(EC.presence_of_element_located((By.NAME, 'mall.mallName')))
 #
 #     # 쇼핑몰 기본정보 > 쇼핑몰명
-#     name = lib.create_driver.driver.find_element(by=By.NAME, value='mall.mallName')
+#     name = libs.create_driver.driver.find_element(by=By.NAME, value='mall.mallName')
 #     name.clear()
 #     name.send_keys('autoqa' + str(randomNumI))
 #
 #     # 쇼핑몰 기본정보 > 고객센터 전화번호
-#     number = lib.create_driver.driver.find_element(by=By.NAME, value='mall.serviceCenter.phoneNo')
+#     number = libs.create_driver.driver.find_element(by=By.NAME, value='mall.serviceCenter.phoneNo')
 #     number.clear()
 #     number.send_keys('0100000' + str(randomNumI))
 #
 #     # 쇼핑몰 기본정보 > 고객센터 이메일
-#     email1 = lib.create_driver.driver.find_elements(by=By.NAME, value='representative.email')[0]
+#     email1 = libs.create_driver.driver.find_elements(by=By.NAME, value='representative.email')[0]
 #     email1.clear()
 #     email1.send_keys('dlquddnr' + str(randomNumT))
 #
-#     email2 = lib.create_driver.driver.find_elements(by=By.NAME, value='representative.email')[1]
+#     email2 = libs.create_driver.driver.find_elements(by=By.NAME, value='representative.email')[1]
 #     email2.clear()
 #     email2.send_keys('naver.com' + str(randomNumT))
 #
 #     # 쇼핑몰 접속설정 > 인트로페이지(PC)
-#     intro_PC_none = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[0]
+#     intro_PC_none = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[0]
 #     intro_PC_none.click()
 #
-#     intro_PC_no_access = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[1]
+#     intro_PC_no_access = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[1]
 #     intro_PC_no_access.click()
 #
-#     intro_PC_member = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[2]
+#     intro_PC_member = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_PC')[2]
 #     intro_PC_member.click()
 #
 #     # intro_PC_adult = login.create_driver.driver.find_elements(by=By.NAME,value='introPage_PC')[3] # 성인인증은 휴대폰 인증 등록되어 있어야만 가능
 #     # intro_PC_adult.click()
 #
 #     # 쇼핑몰 접속설정 > 인트로페이지(MO)
-#     intro_MO_none = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[0]
+#     intro_MO_none = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[0]
 #     intro_MO_none.click()
 #
-#     intro_MO_no_access = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[1]
+#     intro_MO_no_access = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[1]
 #     intro_MO_no_access.click()
 #
-#     intro_MO_member = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[2]
+#     intro_MO_member = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[2]
 #     intro_MO_member.click()
 #
-#     intro_MO_adult = lib.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[3]
+#     intro_MO_adult = libs.create_driver.driver.find_elements(by=By.NAME, value='introPage_Mobile')[3]
 #     intro_MO_adult.click()
 #
 #     # 쇼핑몰 접속설정 > 도메인
@@ -430,16 +430,16 @@ def mallManage():
 #
 #     # 결제수단 노출설정 > 일반결제
 #     # page down sleep 필수
-#     body = lib.create_driver.driver.find_element(by=By.CSS_SELECTOR, value='body')
+#     body = libs.create_driver.driver.find_element(by=By.CSS_SELECTOR, value='body')
 #     body.send_keys(Keys.SPACE)
 #     time.sleep(1)
 #
 #     # 무통장입금 사용안함
-#     account_no = lib.create_driver.driver.find_elements(by=By.NAME, value='orderConfig_account')[1]
+#     account_no = libs.create_driver.driver.find_elements(by=By.NAME, value='orderConfig_account')[1]
 #     account_no.click()
 #
 #     # 무통장입금 사용함
-#     account_yes = lib.create_driver.driver.find_elements(by=By.NAME, value='orderConfig_account')[0]
+#     account_yes = libs.create_driver.driver.find_elements(by=By.NAME, value='orderConfig_account')[0]
 #     account_yes.click()
 #
 #
@@ -451,18 +451,18 @@ def mallManage():
 #     option.mallManagement()
 #
 #     # 내부 class 스크롤
-#     mallList = lib.create_driver.driver.find_element(by=By.CLASS_NAME,
+#     mallList = libs.create_driver.driver.find_element(by=By.CLASS_NAME,
 #                                                      value='tui-grid-body-area')
-#     lib.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
+#     libs.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", mallList)
 #
 #     # PC웹 클릭
 #     try:
-#         _PCWeb = lib.create_driver.driver.find_element(by=By.XPATH,
+#         _PCWeb = libs.create_driver.driver.find_element(by=By.XPATH,
 #                                                        value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div'
 #                                                    '/div/div[1]/div[2]/div[2]/div/div[1]/table/tbody/tr/td[2]/div')
 #         _PCWeb.click()
-#         WebDriverWait(lib.create_driver.driver, 3).until(EC.alert_is_present())
-#         alert = lib.create_driver.driver.switch_to.alert
+#         WebDriverWait(libs.create_driver.driver, 3).until(EC.alert_is_present())
+#         alert = libs.create_driver.driver.switch_to.alert
 #         print(alert.text)
 #         alert.accept()
 #     except:
@@ -471,31 +471,31 @@ def mallManage():
 #     time.sleep(1)  # PC웹 출력되고 1초 대기
 #
 #     # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
-#     lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[1])
-#     lib.create_driver.driver.close()
+#     libs.create_driver.driver.switch_to.window(libs.create_driver.driver.window_handles[1])
+#     libs.create_driver.driver.close()
 #
 #     # 다시 현재 탭 0번 탭으로 변경
-#     lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[0])
+#     libs.create_driver.driver.switch_to.window(libs.create_driver.driver.window_handles[0])
 #
 #     # 모바일웹 클릭
 #     try:
-#         _MobileWeb = lib.create_driver.driver.find_element(by=By.XPATH,
+#         _MobileWeb = libs.create_driver.driver.find_element(by=By.XPATH,
 #                                                            value='//*[@id="mall-list-grid"]/div/div/div/div[2]/div/'
 #                                                 'div/div[1]/div[2]/div[2]/div/div[1]/table/tbody/tr/td[3]/div/a')
 #         _MobileWeb.click()
-#         WebDriverWait(lib.create_driver.driver, 3).until(EC.alert_is_present())
-#         alert = lib.create_driver.driver.switch_to.alert
+#         WebDriverWait(libs.create_driver.driver, 3).until(EC.alert_is_present())
+#         alert = libs.create_driver.driver.switch_to.alert
 #         print(alert.text)
 #         alert.accept()
 #     except:
 #         print('모바일웹 클릭 시 alert 미출력됨')
 #
 #     # 현재 탭을 1번 탭으로 변경 후 해당 탭 닫기
-#     lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[1])
-#     lib.create_driver.driver.close()
+#     libs.create_driver.driver.switch_to.window(libs.create_driver.driver.window_handles[1])
+#     libs.create_driver.driver.close()
 #
 #     # 다시 현재 탭 0번 탭으로 변경
-#     lib.create_driver.driver.switch_to.window(lib.create_driver.driver.window_handles[0])
+#     libs.create_driver.driver.switch_to.window(libs.create_driver.driver.window_handles[0])
 
 
 
