@@ -130,7 +130,7 @@ def selectBox2():
     try:
         select = Select(login.create_driver.driver.find_element(by=By.XPATH,
                                                                 value='/html/body/div/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/select'))
-        select.select_by_index(random.randrange(1, 4))
+        select.select_by_index(random.randrange(2, 4))
         time.sleep(1)
         print("TC " + '322' + " PASS")
     except Exception as e:
@@ -148,4 +148,209 @@ def button():
     element.ClickByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/button', '324')
 
 
+# 권한그룹 등록 > 권한 초기화 버튼(TC_325)
+def buttonReset():
+    element.ClickByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]/button', '325')
+    try:
+        while(True):
+            WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+            alert = login.create_driver.driver.switch_to.alert
+            alert.accept()
+    except:
+        return
 
+
+# 권한그룹 등록 > 상품담당자(MD)권한 선택(TC_326)
+def buttonMD():
+    try:
+        select = Select(login.create_driver.driver.find_element(by=By.XPATH,
+                                                                value='/html/body/div/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]/select'))
+        select.select_by_index(0)
+        time.sleep(1)
+    except Exception as e:
+        print(e)
+    login.create_driver.driver.find_element(By.CSS_SELECTOR, value='body').send_keys(Keys.PAGE_DOWN)
+    element.ClickByXPath('//*[@id="md_md-check"]', '326')
+
+
+# 권한그룹 등록 > 권한설정 라디오버튼(TC_328)
+# def radioButton():
+#     element.ClickByNameIndex('#none-menu-설정_1_1652833224117', '328-1')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-상품_2_1652827167683', 1, '328-2')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-주문/배송_3_1652827167683', random.randrange(0, 3), '328-3')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-회원_4_1652827167683', random.randrange(0, 3), '328-4')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-게시판_5_1652827167684', random.randrange(0, 3), '328-5')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-프로모션_6_1652827167684', random.randrange(0, 3), '328-6')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-디자인_7_1652827167684', random.randrange(0, 3), '328-7')
+#     try:
+#         while (True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-부가서비스_8_1652827167684', random.randrange(0, 3), '328-8')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-마케팅_9_1652827167684', random.randrange(0, 3), '328-9')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+#     element.ClickByNameIndex('radio-menu-authority-통계_10_1652827167684', random.randrange(0, 3), '328-10')
+#     try:
+#         while(True):
+#             WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+#             alert = login.create_driver.driver.switch_to.alert
+#             alert.accept()
+#     except Exception as e:
+#         print(e)
+
+
+# 권한그룹 등록 > 저장(TC_329)
+def save():
+    try:
+        button = login.create_driver.driver.find_element(By.XPATH,
+                                                             value='/html/body/div[1]/div[4]/div/div[2]/button[2]')
+        login.create_driver.driver.execute_script("arguments[0].click();", button)
+        time.sleep(1)
+        WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+        alert = login.create_driver.driver.switch_to.alert
+        alert.accept()
+        print("TC " + '329' + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + '329' + " Fail")
+        return False
+
+
+# 권한그룹 등록 > 목록(TC_330)
+def authorityList():
+    login.create_driver.driver.find_element(By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]/div/div/div/div[1]/div/button').click()
+    time.sleep(2)
+    element.ClickByXPath('/html/body/div[1]/div[4]/div/div[2]/button[1]', '330')
+
+
+# 권한그룹 수정(TC_331)
+def selectAuthority():
+    editauthority = login.create_driver.driver.find_element(By.CSS_SELECTOR,
+                                                            value='body > div > div.container-wrap > div.content-bottom-wrap > '
+                                                                  'div.contents > div > div > div > div.content_item_bx > div > '
+                                                                  'div > div.tui-grid-content-area > div.tui-grid-rside-area > '
+                                                                  'div.tui-grid-body-area > div > div.tui-grid-table-container > '
+                                                                  'table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a').text
+    element.ClickByCSS_SELECTOR('body > div > div.container-wrap > div.content-bottom-wrap > '
+                                'div.contents > div > div > div > div.content_item_bx > div > '
+                                'div > div.tui-grid-content-area > div.tui-grid-rside-area > '
+                                'div.tui-grid-body-area > div > div.tui-grid-table-container > '
+                                'table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a', '331-1')
+
+    defaultauthority = login.create_driver.driver.find_element(By.CSS_SELECTOR,
+                                                               value='body > div > div.container-wrap > div.content-bottom-wrap > '
+                                                                     'div.contents > div:nth-child(1) > div.box-cont > table > '
+                                                                     'tbody > tr:nth-child(3) > td > div > div > input').get_attribute('type')
+    if editauthority == '테스트':
+        print("TC " + '331-1' + " PASS")
+    else:
+        print("TC " + '331-2' + " Fail")
+
+
+# 권한그룹 수정(TC_322)
+def editAuthority():
+    # ㅁautoqa 쇼핑몰 선택
+    element.ClickByID('MallCheckbox_4362', '322-1')
+
+    # 권한그룹명 + randdomT 변수
+    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[3]/td/div/div/input', '테스트 권한' + str(element.randomNumT), '322-2')
+
+    # 권한그룹 설명 + randdomT 변수
+    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[4]/td/div/div/input', '테스트 권한그룹 설명' + str(element.randomNumT), '322-3')
+
+    # 개인정보 목록조회 ㅇ가능
+    element.ClickByID('enable-privacy-authority', '322-4')
+    login.create_driver.driver.find_element(By.CSS_SELECTOR, 'body').send_keys(Keys.PAGE_DOWN)
+
+    # 모든 권한 읽기로 변경
+    login.create_driver.driver.find_element(By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[3]/table/thead/tr/th[1]/span/input').click()
+    try:
+        select = Select(login.create_driver.driver.find_element(by=By.XPATH,
+                                                                value='/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/select'))
+        select.select_by_index(2)
+        time.sleep(1)
+    except Exception as e:
+        print(e)
+        print("TC " + '322-5' + " Fail")
+    element.ClickByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/button', '322-5')
+
+    # 저장버튼 클릭
+    try:
+        button = login.create_driver.driver.find_element(By.XPATH,
+                                                             value='/html/body/div[1]/div[4]/div/div[2]/button[2]')
+        login.create_driver.driver.execute_script("arguments[0].click();", button)
+        time.sleep(1)
+        WebDriverWait(login.create_driver.driver, 3).until(EC.alert_is_present())
+        alert = login.create_driver.driver.switch_to.alert
+        alert.accept()
+        print("TC " + '322-6' + " PASS")
+    except Exception as e:
+        print(e)
+        print("TC " + '322-6' + " Fail")
+
+
+# 권한그룹 삭제(TC_333)
+def deleteAuthority():
+    # scroll = login.create_driver.driver.find_element(By.CSS_SELECTOR, value='body')
+    # login.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", scroll)
+    grid = login.create_driver.driver.find_element(By.CLASS_NAME, value='tui-grid-body-area')
+    login.create_driver.driver.execute_script("arguments[0].scrollBy(1000,0)", grid)
