@@ -38,7 +38,7 @@ def accessEditMall():
 
 # 쇼핑몰 수정 > 기본정보 > 쇼핑몰명(TC_143)
 def mallName():
-    element.InputByName('mall.mallName', 'autoqa' + str(element.randomNumI), '143')
+    element.InputByName('mall.mallName', 'proqa01', '143')
 
 
 # 쇼핑몰 수정 > 기본정보 > 고객센터 전화번호(TC_144)

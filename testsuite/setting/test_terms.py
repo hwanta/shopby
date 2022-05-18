@@ -24,11 +24,11 @@ class Test(TestCase):
         time.sleep(3)
         login.create_driver.driver.quit()
 
-    def test_001(self):
-        terms.choiceMall()
-
-    def test_002(self):
-        terms.clickList()
+    # def test_001(self):
+    #     terms.choiceMall()
+    #
+    # def test_002(self):
+    #     terms.clickList()
 
     def test_003(self):
         terms.companyIntroduction()

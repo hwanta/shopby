@@ -23,18 +23,18 @@ def accessTerm():
                                    ((By.LINK_TEXT,'약관/개인정보처리방침 관리')))
     login.create_driver.driver.find_element(by=By.LINK_TEXT, value="약관/개인정보처리방침 관리").click()
 
-# 설정 > 약관/개인정보처리방침 관리 > 쇼핑몰 탭(TC_174)
-def choiceMall():
-    element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/div/a','174')
-
-
-# 설정 > 약관/개인정보처리방침 관리 > 쇼핑몰 탭 좌측 목록 버튼 (TC_175,176)
-def clickList():
-    # 목록버튼 클릭
-    element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/button','175')
-
-    # 출력된 쇼핑몰 선택
-    element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[2]/ul/li[2]/a/span','176')
+# # 설정 > 약관/개인정보처리방침 관리 > 쇼핑몰 탭(TC_174)
+# def choiceMall():
+#     element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/div/a','174')
+#
+#
+# # 설정 > 약관/개인정보처리방침 관리 > 쇼핑몰 탭 좌측 목록 버튼 (TC_175,176)
+# def clickList():
+#     # 목록버튼 클릭
+#     element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/button','175')
+#
+#     # 출력된 쇼핑몰 선택
+#     element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[2]/ul/li[2]/a/span','176')
 
 
 # 설정 > 약관/개인정보처리방침 관리 > 쇼핑몰/회사소개 탭(TC_177)

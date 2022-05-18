@@ -40,7 +40,7 @@ def representativeName():
 
 # 설정 > 기본정보 > 사업자등록번호(TC_100)
 def companyRegistrationNumber():
-    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '000000' + str(element.randomNumI), '100')
+    element.InputByXPath(BI + 'tr[2]/td/div/div/input', '0000000000', '100')
 
 
 # 설정 > 기본정보 > 대표전화번호(TC_101)
@@ -50,7 +50,7 @@ def representativeNumber():
 
 # 설정 > 기본정보 > 통신판매업 신고번호(TC_102)
 def telemarketingNumber():
-    element.InputByXPath(BI + 'tr[3]/td[2]/div/div/input', '0101111' + str(element.randomNumI), '102')
+    element.InputByXPath(BI + 'tr[3]/td[2]/div/div/input', '01000000000', '102')
 
 
 # 설정 > 기본정보 > 대표이메일(TC_103~104)

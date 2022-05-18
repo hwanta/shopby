@@ -90,8 +90,9 @@ def clickRegistration():
 # 권한그룹 등록 > 쇼핑몰 선택(TC_314,315)
 def selectMall():
     element.ClickByID('AllSelectCheckbox_all-select-mall', '314')
-    element.ClickByID('MallCheckbox_4362', '315-1')
-    element.ClickByID('MallCheckbox_4395', '315-2')
+    element.ClickByID('MallCheckbox_4403', '315')
+    login.create_driver.driver.find_element(By.ID,value='AllSelectCheckbox_all-select-mall').click()
+    time.sleep(1)
 
 
 # 권한그룹 등록 > 권한 그룹명(TC_316)
@@ -299,30 +300,29 @@ def selectAuthority():
     defaultauthority = login.create_driver.driver.find_element(By.CSS_SELECTOR,
                                                                value='body > div > div.container-wrap > div.content-bottom-wrap > '
                                                                      'div.contents > div:nth-child(1) > div.box-cont > table > '
-                                                                     'tbody > tr:nth-child(3) > td > div > div > input').get_attribute('type')
-    if editauthority == '테스트':
-        print("TC " + '331-1' + " PASS")
+                                                                     'tbody > tr:nth-child(3) > td > div > div > input').get_attribute('value')
+    if editauthority == defaultauthority:
+        print("TC " + '331-2' + " PASS")
     else:
         print("TC " + '331-2' + " Fail")
 
 
 # 권한그룹 수정(TC_322)
 def editAuthority():
-    # ㅁautoqa 쇼핑몰 선택
-    element.ClickByID('MallCheckbox_4362', '322-1')
 
     # 권한그룹명 + randdomT 변수
-    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[3]/td/div/div/input', '테스트 권한' + str(element.randomNumT), '322-2')
+    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[3]/td/div/div/input', '테스트 권한 수정' + str(element.randomNumT), '322-2')
 
     # 권한그룹 설명 + randdomT 변수
-    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[4]/td/div/div/input', '테스트 권한그룹 설명' + str(element.randomNumT), '322-3')
+    element.InputByXPath('/html/body/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/table/tbody/tr[4]/td/div/div/input', '테스트 권한그룹 설명 수정' + str(element.randomNumT), '322-3')
 
     # 개인정보 목록조회 ㅇ가능
     element.ClickByID('enable-privacy-authority', '322-4')
-    login.create_driver.driver.find_element(By.CSS_SELECTOR, 'body').send_keys(Keys.PAGE_DOWN)
+
+    login.create_driver.driver.find_element(By.CSS_SELECTOR, value='body').send_keys(Keys.PAGE_DOWN)
 
     # 모든 권한 읽기로 변경
-    login.create_driver.driver.find_element(By.XPATH, value='/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[3]/table/thead/tr/th[1]/span/input').click()
+    login.create_driver.driver.find_element(By.XPATH, value='/html/body/div/div[3]/div[2]/div[1]/div[2]/div[2]/div[3]/table/thead/tr/th[1]/span/input').click()
     try:
         select = Select(login.create_driver.driver.find_element(by=By.XPATH,
                                                                 value='/html/body/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[2]/div[2]/select'))
@@ -348,9 +348,3 @@ def editAuthority():
         print("TC " + '322-6' + " Fail")
 
 
-# 권한그룹 삭제(TC_333)
-def deleteAuthority():
-    # scroll = login.create_driver.driver.find_element(By.CSS_SELECTOR, value='body')
-    # login.create_driver.driver.execute_script("arguments[0].scrollBy(0,470)", scroll)
-    grid = login.create_driver.driver.find_element(By.CLASS_NAME, value='tui-grid-body-area')
-    login.create_driver.driver.execute_script("arguments[0].scrollBy(1000,0)", grid)

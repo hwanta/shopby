@@ -26,8 +26,8 @@ def accessExternal():
 
 
 # 설정 > 외부서비스 설정 > 쇼핑몰 탭(TC_231)
-def choiceMall():
-    element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/div/a', '231')
+# def choiceMall():
+#     element.ClickByXPath('/html/body/div[1]/div[3]/div[1]/div[2]/div/div/div[1]/div/div/div/div[2]/div/div/a', '231')
 
 
 # 외부서비스 설정 > 구글통계 (TC_232,233)
