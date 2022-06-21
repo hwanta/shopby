@@ -11,4 +11,4 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 options.add_argument("--start-maximized")  # 전체화면 옵션
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options) # 크롬 드라이버 대신하는 드라이버 (자동화 트러블 슈팅/일지)
