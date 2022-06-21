@@ -3,12 +3,14 @@ from webdriver_manager.chrome import ChromeDriverManager  # import ChromeDriverM
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait  # 로딩될 때까지 대기
 from selenium.webdriver.support import expected_conditions as EC  # 로딩될 때까지 대기
+from selenium.webdriver.support.select import Select
 import time
 from libs import login
 import random
 
 randomNumT = random.randrange(1, 1000)
 randomNumI = random.randrange(1000, 10000)
+
 
 # xpath로 버튼 클릭
 def ClickByXPath(element, num):
@@ -144,6 +146,27 @@ def ClickByClassName(element, num):
         print("TC " + num + " Fail")
         return False
 
+# text로 특정 항목 클릭 *** 작동 되는지 확인 해야 함
+def ClickByText(element, num):
+    '''
+    text로 특정 항목 클릭
+    :param element: Text
+    :param num: TC_number
+    :return:
+    '''
+    try:
+        text = "//*[contains(text(), " + element + ")]"
+        login.create_driver.driver.find_element(By.XPATH, value=text).click()
+        time.sleep(1)
+        print("TC " + num + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + num + " Fail")
+        return False
+
+
+
 
 # xpath로 inputbox 내용 입력
 def InputByXPath(element, input, num):
@@ -203,6 +226,71 @@ def InputByNameIndex(element, index, input, num):
         name_index = login.create_driver.driver.find_elements(By.NAME, value=element)[int(index)]
         name_index.clear()
         name_index.send_keys(input)
+        time.sleep(1)
+        print("TC " + num + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + num + " Fail")
+        return False
+
+
+# ID로 inputbox 내용 입력
+def InputById(element, input, num):
+    '''
+    Id로 inputbox 내용 입력
+    :param element: Id
+    :param input: input box 입력 내용
+    :param num: TC_number
+    :return:
+    '''
+
+    try:
+        login.create_driver.driver.find_element(By.ID, value=element).clear()
+        login.create_driver.driver.find_element(By.ID, value=element).send_keys(input)
+        time.sleep(1)
+        print("TC " + num + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + num + " Fail")
+        return False
+
+
+# Select box(xpath) > Value로 특정 값 선택
+def SelectBoxByXpath(element, value, num):
+    '''
+    Select box(xpath 사용) > Value로 특정 값 선택
+    :param element: Select box의 xpath 값 입력
+    :param value: select box에서 선택할 특정 값 입력 (ex.'전체', '쇼핑몰1')
+    :param num: TC_number
+    :return:
+    '''
+    try:
+        select = Select(login.create_driver.driver.find_element(by=By.XPATH,
+                                                                value=element))
+        select.select_by_value(value)
+        time.sleep(1)
+        print("TC " + num + " PASS")
+        return True
+    except Exception as e:
+        print(e)
+        print("TC " + num + " Fail")
+        return False
+
+
+def SelectBoxByName(element, value, num):
+    '''
+    Select box(xpath 사용) > Value로 특정 값 선택
+    :param element: Select box의 xpath 값 입력
+    :param value: select box에서 선택할 특정 값 입력 (ex.'전체', '쇼핑몰1')
+    :param num: TC_number
+    :return:
+    '''
+    try:
+        select = Select(login.create_driver.driver.find_element(by=By.NAME,
+                                                                value=element))
+        select.select_by_value(value)
         time.sleep(1)
         print("TC " + num + " PASS")
         return True
