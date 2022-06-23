@@ -146,7 +146,7 @@ def ClickByClassName(element, num):
         print("TC " + num + " Fail")
         return False
 
-# text로 특정 항목 클릭 *** 작동 되는지 확인 해야 함
+# text로 특정 항목 클릭
 def ClickByText(element, num):
     '''
     text로 특정 항목 클릭
@@ -155,7 +155,7 @@ def ClickByText(element, num):
     :return:
     '''
     try:
-        text = "//*[contains(text(), " + element + ")]"
+        text = "//*[contains(text(), '" + element + "')]"
         login.create_driver.driver.find_element(By.XPATH, value=text).click()
         time.sleep(1)
         print("TC " + num + " PASS")
@@ -164,8 +164,6 @@ def ClickByText(element, num):
         print(e)
         print("TC " + num + " Fail")
         return False
-
-
 
 
 # xpath로 inputbox 내용 입력
@@ -199,7 +197,6 @@ def InputByName(element, input, num):
     :param num: TC_number
     :return:
     '''
-
     try:
         login.create_driver.driver.find_element(By.NAME, value=element).clear()
         login.create_driver.driver.find_element(By.NAME, value=element).send_keys(input)
@@ -279,6 +276,7 @@ def SelectBoxByXpath(element, value, num):
         return False
 
 
+# Select box(Name) > Value로 특정 값 선택
 def SelectBoxByName(element, value, num):
     '''
     Select box(xpath 사용) > Value로 특정 값 선택
@@ -298,3 +296,7 @@ def SelectBoxByName(element, value, num):
         print(e)
         print("TC " + num + " Fail")
         return False
+
+
+# 알럿창 [확인] 클릭
+# def AlertAccept()
