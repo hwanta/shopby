@@ -30,9 +30,9 @@ def login():
 
     # 아이디/비밀번호 입력
     create_driver.driver.find_element(by=By.ID,
-                                      value='username').send_keys('proqa01')
+                                      value='username').send_keys('autopro1')
     create_driver.driver.find_element(by=By.ID,
-                                      value='password').send_keys('1q2w3e4r!!')
+                                      value='password').send_keys('qwe941223!')
 
     # 로그인 버튼 클릭
     create_driver.driver.find_element(by=By.LINK_TEXT,
