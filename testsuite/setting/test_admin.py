@@ -6,7 +6,6 @@ from libs import login
 from pages.setting import admin
 import time
 
-
 class Test(TestCase):
     @classmethod
     def setUpClass(cls):
